@@ -38,6 +38,23 @@ class DocumentationTestCase(unittest.TestCase):
             with self.subTest(required=required):
                 self.assertIn(required, readme)
 
+    def test_readme_has_a_copyable_trial_prompt_for_agents(self) -> None:
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        section = readme.split("## Try it with your agent", 1)[1].split("\n## ", 1)[0]
+        prompt = section.split("```text\n", 1)[1].split("```", 1)[0]
+
+        for required in (
+            "python -m pip install ghravioli",
+            "npx skills add burman-work/ghravioli",
+            "skills/grasshopper-python-components",
+            "ghravioli validate",
+            "ghravioli build",
+            "ghravioli copy",
+            "Don't change anything outside",
+        ):
+            with self.subTest(required=required):
+                self.assertIn(required, " ".join(prompt.split()))
+
     def test_repository_instructions_are_present_and_aligned(self) -> None:
         codex = (ROOT / "AGENTS.md").read_text(encoding="utf-8")
         claude = (ROOT / "CLAUDE.md").read_text(encoding="utf-8")
