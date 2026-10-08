@@ -1,0 +1,14 @@
+kind = "graph"
+schema_version = 1
+id = "example-components"
+name = "Example Components"
+
+[[components]]
+manifest = "first/component.toml"
+x = 200.0
+y = 200.0
+
+[[components]]
+manifest = "second/component.toml"
+x = 440.0
+y = 200.0

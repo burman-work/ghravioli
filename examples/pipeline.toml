@@ -1,0 +1,14 @@
+kind = "graph"
+schema_version = 1
+id = "example-pipeline"
+name = "Example Pipeline"
+
+[[components]]
+manifest = "json_config/component.toml"
+x = 200.0
+y = 200.0
+
+[[components]]
+manifest = "scale_points/component.toml"
+x = 440.0
+y = 200.0

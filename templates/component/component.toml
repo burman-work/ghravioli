@@ -1,0 +1,27 @@
+kind = "component"
+schema_version = 1
+target = "rhino8-python3"
+target_python = "3.9"
+id = "example-process-values"
+name = "Process Values"
+source = "component.py"
+description = "A safe starting point for an offline-authored Python component."
+
+[[inputs]]
+name = "values"
+description = "Values to process."
+type = "generic"
+access = "list"
+optional = true
+
+[[outputs]]
+name = "result"
+description = "Processed values."
+type = "generic"
+access = "list"
+
+[[outputs]]
+name = "log"
+description = "Human-readable execution summary."
+type = "str"
+access = "item"
