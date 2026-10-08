@@ -25,6 +25,39 @@ geometry on the wires and versioned JSON for anything more complex. The builder
 handles the layout. A pasted component shows its full port names, a panel with
 its log, and a slider or toggle on each input that can take one.
 
+## Try it with your agent
+
+Paste this into a coding agent that can run commands on your machine, such as
+Claude Code, Codex or Cursor. It installs ghRavioli in a trial folder, writes a
+small component and puts it on your clipboard, ready to paste into Grasshopper.
+
+```text
+Help me try ghRavioli (https://github.com/burman-work/ghravioli), a tool for
+writing Grasshopper Python components in code and pasting them into Grasshopper.
+
+1. Create a folder called ghravioli-trial in my home directory and work inside
+   it. Make a Python virtual environment there (Python 3.11 or newer; if there
+   isn't one, tell me how to install it before going further) and install the
+   tool with `python -m pip install ghravioli`. Check that `ghravioli --help`
+   runs.
+2. Install the agent skill into that folder with
+   `npx skills add burman-work/ghravioli`. If npx isn't available, download
+   https://github.com/burman-work/ghravioli/archive/refs/heads/main.zip and
+   copy its skills/grasshopper-python-components folder into the folder
+   instead. Read the skill's SKILL.md and follow it from here on.
+3. Write one small component as a Python file plus a TOML manifest. It takes a
+   list of points and a scale factor (a slider from 0 to 10, default 1) and
+   outputs the scaled points and a log.
+4. Run `ghravioli validate`, `ghravioli build` and
+   `ghravioli inspect <archive> --source`, and show me the results.
+5. Run `ghravioli copy` on the manifest to put the component on my clipboard,
+   then tell me how to paste it into Grasshopper in Rhino 8. If Rhino isn't on
+   this machine, tell me where the .ghclip file is so I can move it.
+
+Don't change anything outside the ghravioli-trial folder, and tell me what you
+installed.
+```
+
 ## Status
 
 `ghravioli` 0.1.0a2 is an experimental alpha for Rhino 8 and its Python 3
