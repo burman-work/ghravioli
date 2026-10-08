@@ -1,0 +1,34 @@
+kind = "component"
+schema_version = 1
+target = "rhino8-python3"
+target_python = "3.9"
+id = "example-json-config"
+name = "JSON Config"
+source = "component.py"
+description = "Encodes portable component state as a versioned JSON string."
+
+[[inputs]]
+name = "label"
+description = "Optional configuration label."
+type = "str"
+access = "item"
+optional = true
+
+[[inputs]]
+name = "count"
+description = "Optional whole-number value."
+type = "float"
+access = "item"
+optional = true
+
+[[outputs]]
+name = "config"
+description = "Versioned JSON string; never a Python dictionary on the wire."
+type = "str"
+access = "item"
+
+[[outputs]]
+name = "log"
+description = "Human-readable execution summary."
+type = "str"
+access = "item"

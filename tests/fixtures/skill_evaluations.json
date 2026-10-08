@@ -1,0 +1,62 @@
+[
+  {
+    "name": "native-geometry-pipeline",
+    "query": "Create three Grasshopper Python nodes that generate, transform, and evaluate curves.",
+    "expected_behavior": [
+      "Keeps curves on native Grasshopper geometry wires",
+      "Creates a string log output on every component",
+      "Declares item or list access explicitly",
+      "Does not claim that the generated graph is automatically wired"
+    ]
+  },
+  {
+    "name": "portable-complex-state",
+    "query": "Pass a nested options dictionary from a setup node to two downstream Python nodes.",
+    "expected_behavior": [
+      "Does not pass a Python dictionary or custom object over a wire",
+      "Uses a versioned JSON string envelope",
+      "Validates schema and version in consumers",
+      "Keeps logs separate from the data string"
+    ]
+  },
+  {
+    "name": "offline-component-authoring",
+    "query": "Write an offline Python component and make it pasteable in Rhino 8 Grasshopper.",
+    "expected_behavior": [
+      "Creates Python source plus a TOML component manifest",
+      "Initialises safe outputs before component logic",
+      "Validates and inspects the generated archive",
+      "Uses the embedded archive workflow by default"
+    ]
+  },
+  {
+    "name": "port-older-component",
+    "query": "Reuse the useful Grasshopper generator from an older project in a new public project.",
+    "expected_behavior": [
+      "Reads the existing component and its inputs before writing new code",
+      "Re-implements the behaviour rather than copying project-specific source",
+      "Rejects absolute project paths and secrets",
+      "Uses neutral names and examples"
+    ]
+  },
+  {
+    "name": "rearrange-and-adjust",
+    "query": "Move the offset component to the left of the loft and give its distance input a slider from 0 to 5.",
+    "expected_behavior": [
+      "Edits the manifest rather than the pasted component",
+      "Declares min, max and default on the numeric input",
+      "Sets the position with --at or a graph manifest",
+      "Rebuilds and inspects the archive before asking for a paste"
+    ]
+  },
+  {
+    "name": "live-linked-request",
+    "query": "Make Grasshopper reload Python files automatically while an agent edits them.",
+    "expected_behavior": [
+      "Labels live-linked loading as experimental",
+      "Keeps the default embedded workflow available",
+      "Does not promise hot reload without Rhino verification",
+      "Explains the manual fallback"
+    ]
+  }
+]

@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ghravioli"
+version = "0.1.0a2"
+description = "Experimental agent skill and CLI for writing Rhino Grasshopper Python components as editable files"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Bureau Burman" }]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+]
+dependencies = []
+
+[project.scripts]
+ghravioli = "ghravioli.cli:main"
+
+[project.urls]
+Repository = "https://github.com/burman-work/ghravioli"
+Documentation = "https://github.com/burman-work/ghravioli#readme"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,40 @@
+kind = "component"
+schema_version = 1
+target = "rhino8-python3"
+target_python = "3.9"
+id = "example-scale-points"
+name = "Scale Points"
+source = "component.py"
+description = "Scales native point geometry away from the world origin."
+
+[[inputs]]
+name = "points"
+nickname = "P"
+description = "Native points to scale."
+type = "point"
+access = "list"
+optional = false
+
+[[inputs]]
+name = "factor"
+nickname = "F"
+description = "Scale factor; defaults to 1.0."
+type = "float"
+access = "item"
+optional = true
+min = 0.0
+max = 10.0
+default = 1.0
+
+[[outputs]]
+name = "scaled_points"
+nickname = "P"
+description = "Scaled native points."
+type = "point"
+access = "list"
+
+[[outputs]]
+name = "log"
+description = "Human-readable execution summary."
+type = "str"
+access = "item"

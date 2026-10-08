@@ -1,0 +1,4 @@
+interface:
+  display_name: "Grasshopper Python Components"
+  short_description: "Write Grasshopper Python components as editable files"
+  default_prompt: "Use $grasshopper-python-components to write a Rhino 8 Grasshopper Python component as a Python file and TOML manifest, then build and inspect its .ghclip archive."
