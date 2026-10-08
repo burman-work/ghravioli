@@ -120,6 +120,21 @@ class PackagingTestCase(unittest.TestCase):
         self.assertEqual(workflow.count("timeout-minutes:"), 2)
         self.assertNotRegex(workflow, r"dist/ghravioli-[^\s]+\.(?:whl|tar\.gz)")
 
+    def test_publish_workflow_uses_pinned_trusted_publishing_from_releases(self) -> None:
+        workflow = (ROOT / ".github" / "workflows" / "publish.yml").read_text(
+            encoding="utf-8"
+        )
+
+        self.assertIn("release:\n    types: [published]", workflow)
+        self.assertIn("permissions:\n  contents: read", workflow)
+        self.assertNotRegex(workflow, r"uses:\s+[^@\s]+@(?![0-9a-f]{40}\b)")
+        self.assertEqual(workflow.count("id-token: write"), 1)
+        self.assertIn("name: pypi\n      url: https://pypi.org/p/ghravioli", workflow)
+        self.assertIn("pypa/gh-action-pypi-publish@", workflow)
+        self.assertIn("TAG: ${{ github.event.release.tag_name }}", workflow)
+        self.assertNotIn("password:", workflow)
+        self.assertNotIn("secrets.", workflow)
+
     def test_dependabot_and_security_policy_are_ready_for_public_review(self) -> None:
         dependabot = (ROOT / ".github" / "dependabot.yml").read_text(
             encoding="utf-8"
