@@ -2,7 +2,7 @@
 
 The automated tests show that generated archives are structurally correct.
 Rhino testing is partial: archives paste onto a Grasshopper canvas on Rhino
-8.31.26126.13431 under Windows 10 19045, as recorded in
+8.31.26126.13431 under Windows 10, as recorded in
 [RHINO_ACCEPTANCE.md](RHINO_ACCEPTANCE.md). That is one row of the acceptance
 matrix, not the whole matrix.
 
@@ -11,7 +11,7 @@ matrix, not the whole matrix.
 | Builder/CLI | Python 3.11 to 3.14 on macOS, Windows, and Linux in CI |
 | Embedded component source | Python 3.9 grammar target |
 | Clipboard adapter | `pbcopy`, PowerShell, `wl-copy`, or `xclip`; archive fallback first |
-| Rhino Grasshopper paste, Windows | Confirmed on Rhino 8.31.26126.13431, Windows 10 19045 |
+| Rhino Grasshopper paste, Windows | Confirmed on Rhino 8.31.26126.13431, Windows 10 |
 | Rhino Grasshopper paste, macOS | Pending manual verification |
 | `item` and `list` access | Structurally generated; manual Rhino verification pending |
 | Tree access | Unsupported |

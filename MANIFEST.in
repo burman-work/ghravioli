@@ -6,6 +6,7 @@ graft templates
 graft skills
 graft .agents
 graft .claude
+graft .claude-plugin
 graft .github
 graft scripts
 graft tests

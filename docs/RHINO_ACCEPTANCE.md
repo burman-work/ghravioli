@@ -87,7 +87,7 @@ matrix is still pending: none has been through the ten-step protocol above.
 | Rhino | 8.31.26126.13431 |
 | Grasshopper | 8.31.26126.13431 (plug-in version 1.0.0008) |
 | Script component | Python 3 Script, `ScriptComponentVersion` 3 |
-| OS | Windows 10 Home, 10.0.19045 build 19045 |
+| OS | Windows 10 |
 | Builder | ghRavioli 0.1.0a2 on CPython 3.12.8 |
 
 Archive under test: a test component with nine inputs and twelve outputs. The
@@ -99,12 +99,9 @@ ghravioli build <manifest> --output <archive>.ghclip
 ghravioli copy <archive>.ghclip
 ```
 
-| | |
-| --- | --- |
-| Embedded source SHA-256 | `4a06c10c5d5e13f75b174bcf7d63c67a31f29ec24c5b8d5fcac11140d91eeaf8` |
-| Archive SHA-256 | `f422d42043e8cf677215eb06c98a300e725744cdbb96275ce1613cdc0565bd71` |
-| Clipboard SHA-256 | `f422d42043e8cf677215eb06c98a300e725744cdbb96275ce1613cdc0565bd71` |
-| Clipboard length | 137,815 characters, no carriage returns introduced |
+The clipboard text matched the archive byte for byte (equal SHA-256 hashes, no
+carriage returns introduced). The hashes and the archive itself are kept with
+the private evidence bundle.
 
 Observed: the archive pastes onto a clean Grasshopper canvas and the component
 appears with its declared ports. An earlier archive of the same component

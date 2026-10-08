@@ -134,7 +134,7 @@ pasted.
 
 An archive containing a component plus four Number Sliders, four Boolean
 Toggles and a wired Panel pastes onto a Grasshopper canvas on Rhino
-8.31.26126.13431 under Windows 10 19045. The object identifiers and container
+8.31.26126.13431 under Windows 10. The object identifiers and container
 shapes are therefore accepted by Grasshopper, not just plausible. The
 full record, including hashes, is in
 [RHINO_ACCEPTANCE.md](RHINO_ACCEPTANCE.md).

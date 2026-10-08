@@ -1,0 +1,19 @@
+{
+  "name": "ghravioli",
+  "version": "0.1.0-alpha.2",
+  "description": "Agent skill for writing Grasshopper Python components in code, verifying them and copy-pasting them into Grasshopper, so they stay easy to modify and arrange. Pair it with the ghravioli CLI (pip install ghravioli).",
+  "author": {
+    "name": "Bureau Burman",
+    "url": "https://github.com/burman-work"
+  },
+  "homepage": "https://github.com/burman-work/ghravioli",
+  "repository": "https://github.com/burman-work/ghravioli",
+  "license": "MIT",
+  "keywords": [
+    "grasshopper",
+    "rhino",
+    "rhino3d",
+    "python",
+    "parametric-design"
+  ]
+}

@@ -19,9 +19,10 @@ the skill for Codex, Claude Code or any other agent.
 
 ## Release channels
 
-0.1.0a2 is an experimental alpha, distributed from GitHub. It isn't on PyPI
-yet. A package upload or a skill-directory submission goes through
-`RELEASE_CHECKLIST.md`, and each is a separate decision.
+0.1.0a2 is an experimental alpha, distributed from GitHub and PyPI. Publishing
+a GitHub release uploads that version to PyPI through
+`.github/workflows/publish.yml`. Skill-directory listings are separate from
+package releases; both go through `RELEASE_CHECKLIST.md`.
 
 The project name and description must keep the non-affiliation statement and
 must not imply an official McNeel product.

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 import subprocess
 import sys
 import tempfile
@@ -134,6 +135,19 @@ class PackagingTestCase(unittest.TestCase):
         self.assertIn("TAG: ${{ github.event.release.tag_name }}", workflow)
         self.assertNotIn("password:", workflow)
         self.assertNotIn("secrets.", workflow)
+
+    def test_claude_plugin_manifest_matches_the_package(self) -> None:
+        plugin = json.loads(
+            (ROOT / ".claude-plugin" / "plugin.json").read_text(encoding="utf-8")
+        )
+        project = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))["project"]
+
+        self.assertEqual(plugin["name"], "ghravioli")
+        self.assertEqual(plugin["license"], project["license"])
+        self.assertEqual(plugin["repository"], project["urls"]["Repository"])
+        semver = re.sub(r"(\d)(a|b|rc)(\d+)$", lambda m: f"{m[1]}-" + {"a": "alpha", "b": "beta", "rc": "rc"}[m[2]] + f".{m[3]}", project["version"])
+        self.assertEqual(plugin["version"], semver)
+        self.assertTrue((ROOT / "skills" / "grasshopper-python-components" / "SKILL.md").is_file())
 
     def test_dependabot_and_security_policy_are_ready_for_public_review(self) -> None:
         dependabot = (ROOT / ".github" / "dependabot.yml").read_text(
