@@ -5,11 +5,12 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "ghravioli"
 version = "0.1.0a2"
-description = "Experimental agent skill and CLI for writing Rhino Grasshopper Python components as editable files"
+description = "Experimental agent skill and CLI for writing Grasshopper Python components in code, verifying them and copy-pasting them into Grasshopper"
 readme = "README.md"
 requires-python = ">=3.11"
 license = "MIT"
 license-files = ["LICENSE"]
+keywords = ["grasshopper", "rhino", "rhino3d", "python", "agent-skills", "claude-code", "codex"]
 authors = [{ name = "Bureau Burman" }]
 classifiers = [
   "Development Status :: 3 - Alpha",

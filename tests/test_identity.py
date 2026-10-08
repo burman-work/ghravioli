@@ -33,7 +33,8 @@ class PublicIdentityTestCase(unittest.TestCase):
         self.assertTrue(readme.startswith("# ghRavioli\n"))
         self.assertIn(
             "An agent skill and command-line tool for writing Grasshopper Python "
-            "components that are easy to modify and arrange.",
+            "components in code, verifying them, and copy-pasting them into "
+            "Grasshopper. The components stay easy to modify and arrange.",
             normalized,
         )
         self.assertIn("`ghravioli` 0.1.0a2", readme)

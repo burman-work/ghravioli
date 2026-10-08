@@ -1,7 +1,8 @@
 # ghRavioli
 
 An agent skill and command-line tool for writing Grasshopper Python components
-that are easy to modify and arrange.
+in code, verifying them, and copy-pasting them into Grasshopper. The components
+stay easy to modify and arrange.
 
 Grasshopper keeps a script component's code inside the canvas, where a coding
 agent can't easily read, edit or diff it. ghRavioli keeps each component in two
@@ -17,7 +18,7 @@ archive onto the Grasshopper canvas. To change a component, edit the files,
 rebuild and paste again.
 
 The skill in
-[`skills/grasshopper-python-components`](skills/grasshopper-python-components)
+[`skills/grasshopper-python-components`](https://github.com/burman-work/ghravioli/tree/main/skills/grasshopper-python-components)
 shows the agent how to write components that stay easy to work with: one job
 per component, readable port names, a `log` output on every component, native
 geometry on the wires and versioned JSON for anything more complex. The builder
@@ -31,7 +32,7 @@ Script component.
 
 - A generated archive with a component, four sliders, four toggles and a log
   panel pastes onto the canvas in Rhino 8.31 on Windows 10. The test is
-  recorded in [Rhino acceptance](docs/RHINO_ACCEPTANCE.md).
+  recorded in [Rhino acceptance](https://github.com/burman-work/ghravioli/blob/main/docs/RHINO_ACCEPTANCE.md).
 - That test didn't check each slider's range and value, each toggle's state,
   or saving and reopening the definition. Those manual Rhino checks are still
   to do.
@@ -49,18 +50,32 @@ between a component and its own panels, sliders and toggles.
 ## Install
 
 ```bash
+python -m pip install ghravioli
+ghravioli --help
+```
+
+The PyPI package contains the command-line tool and the Python library. The
+agent skill, examples and docs live in the repository, so clone it as well if
+you want those:
+
+```bash
 git clone https://github.com/burman-work/ghravioli.git
 cd ghravioli
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -e .
-ghravioli --help
 ```
 
-On Windows, activate with `.venv\Scripts\activate`. The package isn't on PyPI
-yet.
+On Windows, activate with `.venv\Scripts\activate`.
 
 ## Using the skill with an agent
+
+Install the skill into Claude Code, Codex and other agents with
+[skills](https://skills.sh/burman-work/ghravioli):
+
+```bash
+npx skills add burman-work/ghravioli
+```
 
 Inside this repository, Claude Code finds the skill in
 `.claude/skills/grasshopper-python-components` and Codex finds it in
@@ -75,7 +90,7 @@ archive and inspects it. You paste it.
 
 ## A component
 
-[`examples/scale_points/component.py`](examples/scale_points/component.py) is
+[`examples/scale_points/component.py`](https://github.com/burman-work/ghravioli/blob/main/examples/scale_points/component.py) is
 ordinary Python. Grasshopper supplies the inputs as variables, and the script
 sets the outputs:
 
@@ -94,7 +109,7 @@ except (TypeError, ValueError) as error:
     log = f"error: {type(error).__name__}: {error}"
 ```
 
-[`examples/scale_points/component.toml`](examples/scale_points/component.toml)
+[`examples/scale_points/component.toml`](https://github.com/burman-work/ghravioli/blob/main/examples/scale_points/component.toml)
 declares its interface. The `min`, `max` and `default` on `factor` give that
 input a slider when the archive is pasted:
 
@@ -144,7 +159,7 @@ ghravioli copy examples/scale_points/component.toml
 Paste onto the Grasshopper canvas. `copy` accepts a manifest or a `.ghclip`
 and builds first when given a manifest.
 
-[`examples/json_config/component.toml`](examples/json_config/component.toml)
+[`examples/json_config/component.toml`](https://github.com/burman-work/ghravioli/blob/main/examples/json_config/component.toml)
 shows a component that passes its settings on as a versioned JSON string.
 
 ## Arranging components on the canvas
@@ -156,7 +171,7 @@ to `build` or `copy` to put a single component somewhere else, for example
 `--at 0,0`.
 
 To place several components in one paste, list them in a graph manifest with a
-position for each, as in [`examples/pipeline.toml`](examples/pipeline.toml):
+position for each, as in [`examples/pipeline.toml`](https://github.com/burman-work/ghravioli/blob/main/examples/pipeline.toml):
 
 ```toml
 kind = "graph"
@@ -189,7 +204,7 @@ A boolean input gets a toggle. A number input gets a slider only when the
 manifest gives it a `min` and `max`, so no slider has a made-up range. Any
 other output can ask for its own panel with `panel = true`. Keep the `out`
 console while debugging: it shows tracebacks, which `log` can't. See
-[canvas presentation](docs/CANVAS.md).
+[canvas presentation](https://github.com/burman-work/ghravioli/blob/main/docs/CANVAS.md).
 
 ## Passing data between components
 
@@ -201,8 +216,8 @@ console while debugging: it shows tracebacks, which `log` can't. See
 - Give every component exactly one `log` output: a short summary for a person
   to read, kept apart from the data.
 
-[Data flow](docs/DATA_FLOW.md) and the
-[component contract](docs/COMPONENT_CONTRACT.md) have the details.
+[Data flow](https://github.com/burman-work/ghravioli/blob/main/docs/DATA_FLOW.md) and the
+[component contract](https://github.com/burman-work/ghravioli/blob/main/docs/COMPONENT_CONTRACT.md) have the details.
 
 ## Checking an archive before you paste it
 
@@ -229,7 +244,7 @@ ghravioli code pipeline.ghclip --component 2 > second.py
 The inspector only accepts archives in the exact shape ghRavioli generates.
 That makes review easier, but it doesn't make the code safe to run. Embedded
 source keeps its own copyright and licence; building an archive doesn't grant
-the right to redistribute it. See [security](docs/SECURITY.md).
+the right to redistribute it. See [security](https://github.com/burman-work/ghravioli/blob/main/docs/SECURITY.md).
 
 ## If the clipboard doesn't work
 
@@ -242,7 +257,7 @@ Grasshopper definition file.
 
 ## Licence and support
 
-ghRavioli is released under the [MIT licence](LICENSE). You can use, change and
+ghRavioli is released under the [MIT licence](https://github.com/burman-work/ghravioli/blob/main/LICENSE). You can use, change and
 redistribute it, including commercially, as long as the licence notice stays
 with copies. It is provided as is, with no support, warranty, or promise of
 fixes or updates.
@@ -252,7 +267,7 @@ fixes or updates.
 The public API is `load_manifest`, `build_bytes`, `build_file`,
 `inspect_archive`, `ComponentManifest` and `GraphManifest`. Everything else in
 the package is internal and may change during the alpha. See
-[distribution](docs/DISTRIBUTION.md) for what a package install includes.
+[distribution](https://github.com/burman-work/ghravioli/blob/main/docs/DISTRIBUTION.md) for what a package install includes.
 
 ## Development
 
@@ -274,16 +289,16 @@ same repository instructions for agents working on ghRavioli itself.
 
 ## Documentation
 
-- [Component contract](docs/COMPONENT_CONTRACT.md)
-- [Canvas presentation](docs/CANVAS.md)
-- [Data flow between components](docs/DATA_FLOW.md)
-- [Compatibility](docs/COMPATIBILITY.md)
-- [Rhino acceptance](docs/RHINO_ACCEPTANCE.md)
-- [Design](docs/DESIGN.md)
-- [Roadmap](docs/ROADMAP.md)
-- [Security](docs/SECURITY.md)
-- [Distribution](docs/DISTRIBUTION.md)
-- [Release checklist](docs/RELEASE_CHECKLIST.md)
+- [Component contract](https://github.com/burman-work/ghravioli/blob/main/docs/COMPONENT_CONTRACT.md)
+- [Canvas presentation](https://github.com/burman-work/ghravioli/blob/main/docs/CANVAS.md)
+- [Data flow between components](https://github.com/burman-work/ghravioli/blob/main/docs/DATA_FLOW.md)
+- [Compatibility](https://github.com/burman-work/ghravioli/blob/main/docs/COMPATIBILITY.md)
+- [Rhino acceptance](https://github.com/burman-work/ghravioli/blob/main/docs/RHINO_ACCEPTANCE.md)
+- [Design](https://github.com/burman-work/ghravioli/blob/main/docs/DESIGN.md)
+- [Roadmap](https://github.com/burman-work/ghravioli/blob/main/docs/ROADMAP.md)
+- [Security](https://github.com/burman-work/ghravioli/blob/main/docs/SECURITY.md)
+- [Distribution](https://github.com/burman-work/ghravioli/blob/main/docs/DISTRIBUTION.md)
+- [Release checklist](https://github.com/burman-work/ghravioli/blob/main/docs/RELEASE_CHECKLIST.md)
 
 Rhino® and Grasshopper® are registered trademarks of TLM, Inc., doing business
 as Robert McNeel & Associates. ghRavioli is an independent project and is not
