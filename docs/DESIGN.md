@@ -2,7 +2,7 @@
 
 ## Boundary
 
-ghRavioli lets an agent or a developer write component Python outside
+Ravioli lets an agent or a developer write component Python outside
 Grasshopper, declare the component's interface in TOML, and generate a
 self-contained Rhino 8 Grasshopper Python 3 clipboard archive. Because the code
 and interface live in ordinary files, they can be edited, diffed, reviewed and
@@ -32,7 +32,7 @@ live-linked source are outside the alpha boundary.
 
 ## Independent implementation
 
-ghRavioli is an independent implementation based on documented behaviour and
+Ravioli is an independent implementation based on documented behaviour and
 functional interoperability facts. The Grasshopper object and parameter
 identifiers it writes are recorded as constants with comments in
 `src/ghravioli/constants.py`. No Rhino or Grasshopper binary is included.

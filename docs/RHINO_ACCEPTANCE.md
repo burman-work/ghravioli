@@ -88,7 +88,7 @@ matrix is still pending: none has been through the ten-step protocol above.
 | Grasshopper | 8.31.26126.13431 (plug-in version 1.0.0008) |
 | Script component | Python 3 Script, `ScriptComponentVersion` 3 |
 | OS | Windows 10 |
-| Builder | ghRavioli 0.1.0a2 on CPython 3.12.8 |
+| Builder | Ravioli 0.1.0a2 on CPython 3.12.8 |
 
 Archive under test: a test component with nine inputs and twelve outputs. The
 archive carries ten objects: the Python 3 Script component, four Number

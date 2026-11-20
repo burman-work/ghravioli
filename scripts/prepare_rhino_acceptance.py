@@ -136,7 +136,7 @@ def prepare(output: Path, *, commit: str | None = None) -> None:
 
     evidence = {
         "format_version": 1,
-        "candidate": {"name": "ghRavioli", "version": __version__, "commit": _commit(commit)},
+        "candidate": {"name": "Ravioli", "version": __version__, "commit": _commit(commit)},
         "manual_status": "pending",
         "fixtures": fixture_records,
     }
@@ -146,7 +146,7 @@ def prepare(output: Path, *, commit: str | None = None) -> None:
         newline="",
     )
     (destination / "CHECKLIST.md").write_text(
-        "# ghRavioli Rhino acceptance bundle\n\n"
+        "# Ravioli Rhino acceptance bundle\n\n"
         "MANUAL STATUS: PENDING\n\n"
         f"Candidate: {__version__} at `{evidence['candidate']['commit']}`\n\n"
         "This bundle prepares deterministic neutral fixtures; it does not prove Rhino or "

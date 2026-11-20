@@ -2,7 +2,7 @@
 
 ## Purpose
 
-ghRavioli is an agent skill and a Python toolkit. Agents write Rhino 8
+Ravioli is an agent skill and a Python toolkit. Agents write Rhino 8
 Grasshopper Python 3 components as a Python file plus a TOML manifest, and the
 toolkit builds `.ghclip` clipboard archives from them that can be pasted onto
 the canvas.

@@ -1,11 +1,13 @@
-# ghRavioli
+# Ravioli (for Grasshopper)
 
 An agent skill and command-line tool for writing Grasshopper Python components
 in code, verifying them, and copy-pasting them into Grasshopper. The components
 stay easy to modify and arrange.
 
+The Python package, command and repository are named `ghravioli`.
+
 Grasshopper keeps a script component's code inside the canvas, where a coding
-agent can't easily read, edit or diff it. ghRavioli keeps each component in two
+agent can't easily read, edit or diff it. Ravioli keeps each component in two
 ordinary files instead:
 
 - `component.py` holds the computation;
@@ -28,11 +30,11 @@ its log, and a slider or toggle on each input that can take one.
 ## Try it with your agent
 
 Paste this into a coding agent that can run commands on your machine, such as
-Claude Code, Codex or Cursor. It installs ghRavioli in a trial folder, writes a
+Claude Code, Codex or Cursor. It installs Ravioli in a trial folder, writes a
 small component and puts it on your clipboard, ready to paste into Grasshopper.
 
 ```text
-Help me try ghRavioli (https://github.com/burman-work/ghravioli), a tool for
+Help me try Ravioli (https://github.com/burman-work/ghravioli), a tool for
 writing Grasshopper Python components in code and pasting them into Grasshopper.
 
 1. Create a folder called ghravioli-trial in my home directory and work inside
@@ -76,7 +78,7 @@ Script component.
 The builder needs Python 3.11 or newer. Component code is checked against
 Python 3.9, the version Rhino 8's Python 3 component runs.
 
-An archive can position several components, but ghRavioli doesn't wire them to
+An archive can position several components, but Ravioli doesn't wire them to
 each other; you connect them on the canvas. The only wires it creates run
 between a component and its own panels, sliders and toggles.
 
@@ -274,7 +276,7 @@ ghravioli code scale-points.ghclip > scale_points.py
 ghravioli code pipeline.ghclip --component 2 > second.py
 ```
 
-The inspector only accepts archives in the exact shape ghRavioli generates.
+The inspector only accepts archives in the exact shape Ravioli generates.
 That makes review easier, but it doesn't make the code safe to run. Embedded
 source keeps its own copyright and licence; building an archive doesn't grant
 the right to redistribute it. See [security](https://github.com/burman-work/ghravioli/blob/main/docs/SECURITY.md).
@@ -290,7 +292,7 @@ Grasshopper definition file.
 
 ## Licence and support
 
-ghRavioli is released under the [MIT licence](https://github.com/burman-work/ghravioli/blob/main/LICENSE). You can use, change and
+Ravioli is released under the [MIT licence](https://github.com/burman-work/ghravioli/blob/main/LICENSE). You can use, change and
 redistribute it, including commercially, as long as the licence notice stays
 with copies. It is provided as is, with no support, warranty, or promise of
 fixes or updates.
@@ -318,7 +320,7 @@ python3 scripts/prepare_rhino_acceptance.py --output .audit/rhino-0.1.0a2
 `skills/grasshopper-python-components` is the canonical skill. After editing
 it, run `python3 scripts/sync_agent_skills.py` to update the copies in
 `.agents/skills/` and `.claude/skills/`. `AGENTS.md` and `CLAUDE.md` hold the
-same repository instructions for agents working on ghRavioli itself.
+same repository instructions for agents working on Ravioli itself.
 
 ## Documentation
 
@@ -334,6 +336,6 @@ same repository instructions for agents working on ghRavioli itself.
 - [Release checklist](https://github.com/burman-work/ghravioli/blob/main/docs/RELEASE_CHECKLIST.md)
 
 Rhino® and Grasshopper® are registered trademarks of TLM, Inc., doing business
-as Robert McNeel & Associates. ghRavioli is an independent project and is not
+as Robert McNeel & Associates. Ravioli is an independent project and is not
 affiliated with or endorsed by Robert McNeel & Associates. It bundles no Rhino
 or Grasshopper binaries.

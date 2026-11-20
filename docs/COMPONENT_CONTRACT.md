@@ -138,7 +138,7 @@ characters.
 Supported access modes are `item` and `list`. Supported type tokens are `str`,
 `float`, `bool`, `point`, `brep`, `generic`, `int`, `vector`, `surface`,
 `curve`, `mesh`, `geometry`, and `plane`. Only `str`, `float`, `bool`, `point`,
-and `brep` currently receive converter identifiers confirmed by ghRavioli's tests;
+and `brep` currently receive converter identifiers confirmed by Ravioli's tests;
 other tokens remain unhinted pending Rhino acceptance.
 
 ## Graph manifest

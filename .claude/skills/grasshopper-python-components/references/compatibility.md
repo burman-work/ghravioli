@@ -16,7 +16,7 @@
 
 Converter metadata exists for `str`, `float`, `bool`, `point` and `brep`.
 Other supported types stay unhinted. Don't claim more than the results recorded
-in ghRavioli's `docs/RHINO_ACCEPTANCE.md`.
+in Ravioli's `docs/RHINO_ACCEPTANCE.md`.
 
 ## Security and manual testing
 

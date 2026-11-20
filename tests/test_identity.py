@@ -30,7 +30,7 @@ class PublicIdentityTestCase(unittest.TestCase):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         normalized = " ".join(readme.split())
 
-        self.assertTrue(readme.startswith("# ghRavioli\n"))
+        self.assertTrue(readme.startswith("# Ravioli (for Grasshopper)\n"))
         self.assertIn(
             "An agent skill and command-line tool for writing Grasshopper Python "
             "components in code, verifying them, and copy-pasting them into "

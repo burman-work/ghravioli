@@ -29,7 +29,7 @@ from ghravioli.manifest import MAX_DESCRIPTION_LENGTH, MAX_NAME_LENGTH
 
 
 class ArchiveSchemaError(ValueError):
-    """Archive XML falls outside ghRavioli's generated structural subset."""
+    """Archive XML falls outside Ravioli's generated structural subset."""
 
 
 _ANY = object()

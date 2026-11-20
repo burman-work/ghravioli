@@ -1,6 +1,6 @@
 # Security Policy
 
-ghRavioli `0.1.0a2` is an experimental alpha released under the MIT licence. It
+Ravioli `0.1.0a2` is an experimental alpha released under the MIT licence. It
 is provided as is, with no support, warranty, or promise of fixes or updates.
 
 ## Reporting a vulnerability
@@ -13,11 +13,11 @@ commitment to respond or to release a fix.
 
 ## Executable archives
 
-A `.ghclip` generated or inspected by ghRavioli can contain executable Python.
+A `.ghclip` generated or inspected by Ravioli can contain executable Python.
 Base64 is encoding, not encryption. Review the embedded source and its SHA-256
 hash before pasting an archive you didn't build yourself. The inspector checks
-that an archive matches the format ghRavioli generates; it is not a malware
+that an archive matches the format Ravioli generates; it is not a malware
 scanner or sandbox.
 
-ghRavioli is an independent project and is not affiliated with or endorsed by
+Ravioli is an independent project and is not affiliated with or endorsed by
 Robert McNeel & Associates.
